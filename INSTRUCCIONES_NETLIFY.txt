@@ -1,0 +1,38 @@
+1220A Fashion - Version lista para Netlify
+
+IMPORTANTE
+Esta version ya no depende solo del navegador. Usa:
+- Netlify Functions para login, guardar inventario y subir fotos.
+- Netlify Blobs para guardar productos e imagenes.
+
+COMO SUBIRLA A NETLIFY
+Opcion recomendada:
+1. Sube esta carpeta completa a un repositorio de GitHub.
+2. En Netlify, crea un sitio nuevo importando ese repositorio.
+3. Netlify detectara package.json, instalara @netlify/blobs y desplegara las funciones.
+4. En Site configuration > Environment variables, agrega:
+   ADMIN_PASSWORD = la clave privada del dueno
+   ADMIN_TOKEN_SECRET = una frase larga y privada
+5. Haz un nuevo deploy despues de agregar esas variables.
+
+Nota:
+No uses solamente "arrastrar y soltar" un HTML suelto si quieres que funcione el
+panel con base de datos y fotos. Para Functions + dependencias, usa GitHub conectado
+a Netlify o Netlify CLI.
+
+RUTAS QUE USA LA WEB
+- /api/inventory: login y guardado de productos.
+- /api/image: subida y lectura de fotos.
+
+COMO USAR EL PANEL
+1. Abre la web publicada.
+2. Haz click en Admin.
+3. Entra con la clave que pusiste en ADMIN_PASSWORD.
+4. Agrega o edita productos.
+5. Guarda. Los visitantes veran el inventario actualizado.
+
+CLAVE DE RESPALDO
+Si no configuras ADMIN_PASSWORD, la funcion usa esta clave temporal:
+1220A2026
+
+Por seguridad, cambia ADMIN_PASSWORD en Netlify antes de usar la web con clientes.

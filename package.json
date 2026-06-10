@@ -1,0 +1,9 @@
+{
+  "name": "1220a-fashion-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "latest"
+  }
+}
